@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Чекап финансовой грамотности</title>
+    <link rel="stylesheet" href="exhibit-ui.css" />
+    <link rel="stylesheet" href="museum-v2.css?v=20260913-1830" />
+  </head>
+  <body>
+    <main class="app" aria-label="Чекап Насколько ты финансово грамотен">
+      <section class="quiz-panel" id="quizPanel" hidden>
+        <header class="topbar">
+          <div>
+            <p class="kicker">Чекап финансовых привычек</p>
+            <h1 id="questionCounter">Вопрос 1 из 10</h1>
+          </div>
+        </header>
+
+        <section class="question-card" aria-live="polite">
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressBar"></div>
+          </div>
+          <p class="question-text" id="questionText"></p>
+          <div class="answers" id="answers"></div>
+        </section>
+
+        <footer class="quiz-footer">
+          <span>Выбери один вариант ответа</span>
+          <button id="backToStartButton" type="button">Сначала</button>
+        </footer>
+      </section>
+
+      <section class="result-panel" id="resultPanel" hidden>
+        <article class="result-card">
+          <div class="result-visual" id="resultVisual" aria-hidden="true"></div>
+          <p class="result-eyebrow" id="resultEyebrow"></p>
+          <h2 id="resultTitle"></h2>
+          <div class="result-score" id="resultScore"></div>
+          <p id="resultText"></p>
+          <button id="restartButton" type="button">Пройти ещё раз</button>
+        </article>
+      </section>
+
+      <section class="start-panel" id="startPanel" aria-live="polite">
+        <div class="start-content">
+          <h2>Финансовый чекап</h2>
+          <p>
+            Проверь себя: ответь на 10 вопросов и узнай, как у тебя с финансовыми
+            привычками.
+          </p>
+          <button id="startButton" type="button">Начать тест</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="exhibit-ui.js"></script>
+    <script src="script.js?v=20260913-1830"></script>
+  </body>
+</html>

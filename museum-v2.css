@@ -1,0 +1,42 @@
+@font-face{font-family:"Museum Head";src:url("fonts/Заголовки.ttf") format("truetype");font-display:swap;font-weight:700}
+@font-face{font-family:"Museum Text";src:url("fonts/Обычный текст.ttf") format("truetype");font-display:swap;font-weight:400}
+:root{--v2-ink:#172019;--v2-muted:#566158;--v2-paper:#f0e5cb;--v2-paper-deep:#dcc69d;--v2-gold:#c8a15a;--v2-gold-light:#e4c984;--v2-red:#9f3b32;--v2-forest:#101812;--v2-forest-2:#18251c}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#080c09;color:var(--v2-ink);font-family:"Museum Text",Arial,sans-serif}
+button{font:inherit;border:0}
+.app{position:relative;width:1920px;height:1080px;overflow:hidden;transform-origin:top left;background:linear-gradient(rgba(8,14,10,.76),rgba(8,14,10,.9)),url("assets/backgrounds/checkup-ledger.png") center/cover no-repeat}
+.app::before{content:"";position:absolute;inset:24px;z-index:0;border:1px solid rgba(228,201,132,.18);border-radius:20px;pointer-events:none}
+.app::after{content:"";position:absolute;inset:0;z-index:0;box-shadow:inset 0 0 170px 35px rgba(0,0,0,.72);pointer-events:none}
+.quiz-panel{position:absolute;inset:0;z-index:1;display:flex!important;flex-direction:column;padding:52px 70px 42px}
+.quiz-panel[hidden]{display:none!important}
+.topbar{height:132px;display:flex;align-items:flex-start;justify-content:space-between;padding:0;color:#f3e8d1}
+.kicker{margin:2px 0 9px;color:var(--v2-gold-light);font-family:Georgia,serif;font-size:19px;letter-spacing:.13em;text-transform:uppercase}
+h1,h2{font-family:"Museum Head",Georgia,serif;font-weight:700}
+h1{margin:0;color:#f3e8d1;font-size:54px;line-height:1}
+.question-card{width:1740px;height:735px;display:flex;flex-direction:column;align-self:center;padding:45px 60px 50px;border:1px solid rgba(200,161,90,.55);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 34%),var(--v2-paper);box-shadow:0 32px 80px rgba(0,0,0,.38)}
+.progress-track{width:100%;height:12px;flex:0 0 12px;overflow:hidden;border-radius:999px;background:rgba(23,32,25,.15)}
+#progressBar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--v2-gold),var(--v2-gold-light));transition:width 220ms ease}
+.question-text{min-height:126px;margin:35px 0 26px;color:var(--v2-ink);font-family:"Museum Head",Georgia,serif;font-size:45px;line-height:1.12}
+.answers{display:grid;gap:16px;margin-top:auto}
+.answer-button{position:relative;width:100%;min-height:112px;display:flex;align-items:center;padding:20px 30px;border:1px solid rgba(23,32,25,.18);border-radius:12px;background:rgba(255,255,255,.34);color:var(--v2-ink);box-shadow:0 8px 18px rgba(55,41,24,.08);font-size:29px;line-height:1.18;text-align:left;transition:transform 160ms ease,border-color 160ms ease,background 160ms ease,color 160ms ease}
+.answer-button::before{content:attr(data-letter);width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;margin-right:24px;border:1px solid rgba(159,59,50,.45);border-radius:50%;color:var(--v2-red);font-family:Georgia,serif;font-size:27px}
+.answer-button:hover,.answer-button:focus-visible{outline:none;border-color:var(--v2-gold);background:#fff8e7;transform:translateY(-2px)}
+.answer-button:active{transform:scale(.992)}
+.answer-button.is-selected{border-color:var(--v2-red);background:var(--v2-forest-2);color:#f5ead4}
+.answer-button.is-selected::before{border-color:var(--v2-gold-light);background:var(--v2-gold);color:var(--v2-forest)}
+.answer-button[disabled]{cursor:default}
+.quiz-footer{height:88px;display:flex;align-items:flex-end;color:rgba(238,226,202,.7);font-size:20px;letter-spacing:.04em}
+#backToStartButton{display:none!important}
+.start-panel{display:none!important}
+.result-panel{position:absolute;inset:0;z-index:60;display:grid;place-items:center;background:rgba(6,12,8,.74);backdrop-filter:blur(10px)}
+.result-panel[hidden]{display:none!important}
+.result-card{position:relative;width:1080px;min-height:650px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 86px 66px;border:1px solid rgba(200,161,90,.68);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 36%),var(--v2-paper);box-shadow:0 42px 110px rgba(0,0,0,.58);text-align:center}
+.result-card::before{content:"ИТОГ";width:86px;height:86px;display:grid;place-items:center;margin-bottom:24px;border:1px solid var(--v2-gold);border-radius:50%;color:var(--v2-red);font-family:Georgia,serif;font-size:15px;letter-spacing:.13em}
+.result-visual{display:none!important}
+.result-eyebrow{margin:0 0 10px;color:var(--v2-red);font-size:18px;letter-spacing:.13em;text-transform:uppercase}
+.result-card h2{max-width:840px;margin:0;color:var(--v2-ink);font-size:52px;line-height:1.04}
+.result-score{width:520px;min-height:82px;display:grid;place-items:center;margin:22px 0 0;border-radius:12px;background:var(--v2-forest-2);color:#f4e7ca;font-family:Georgia,serif;font-size:46px;box-shadow:inset 0 0 0 1px rgba(228,201,132,.22)}
+.result-card>p:last-of-type{max-width:820px;margin:27px 0 0;color:#3d493f;font-size:25px;line-height:1.38}
+.result-card button{width:520px;min-height:86px;margin-top:38px;padding:0 28px;border:1px solid var(--v2-gold);border-radius:12px;background:linear-gradient(180deg,var(--v2-gold-light),var(--v2-gold));color:var(--v2-forest);box-shadow:0 12px 26px rgba(82,58,23,.22);font-family:"Museum Head",Georgia,serif;font-size:34px}
+.result-card button:focus-visible{outline:3px solid rgba(159,59,50,.38);outline-offset:4px}
+html.exhibit-ui .exhibit-reset{top:51px;right:70px}
